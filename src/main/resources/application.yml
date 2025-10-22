@@ -1,0 +1,24 @@
+# Configuración base, aplicada a todos los perfiles a menos que se sobrescriba.
+
+spring:
+  # Activa el perfil 'dev' por defecto si no se especifica otro al iniciar la app.
+  profiles:
+    active: dev
+  
+  # Seguridad: Configuraciones comunes a todos los entornos
+  security:
+    user:
+      name: digitalnao-user
+  
+  # H2 Console (Desactivada por defecto, solo se activará en 'dev' o 'test')
+  h2:
+    console:
+      enabled: false
+
+server:
+  port: 8080
+  
+# Logging: Configuración para mostrar SQL en todos los entornos
+logging:
+  level:
+    org.hibernate.SQL: WARN

@@ -1,0 +1,16 @@
+# ------------------------------------
+# PERFIL: TEST (Entorno de Pruebas)
+# ------------------------------------
+
+spring: # <-- INICIO ÚNICO DEL BLOQUE SPRING
+  datasource:
+    url: jdbc:h2:file:./testdb/digitalnao-test
+    username: sa
+    password: ''
+    driverClassName: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update 
+  security: # <-- MOVIDO AQUÍ
+    user:
+      password: test-pass

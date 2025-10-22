@@ -1,0 +1,21 @@
+# ------------------------------------
+# PERFIL: PROD (Producción)
+# ------------------------------------
+
+spring:
+  datasource:
+    # Usar variables de entorno para la configuración de la base de datos
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driverClassName: org.postgresql.Driver # Ejemplo: Usando PostgreSQL en Prod
+    
+  jpa:
+    hibernate:
+      ddl-auto: validate # ¡NO USAR 'create-drop' o 'update' en producción!
+    show-sql: false # No mostrar SQL en producción
+    
+# Seguridad: Contraseña segura inyectada desde el sistema
+  security: # <-- MOVIDO AQUÍ
+    user:
+      password: ${NAO_PROD_PASSWORD}
